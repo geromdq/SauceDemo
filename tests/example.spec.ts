@@ -1,18 +1,21 @@
 import { test, expect } from '@playwright/test';
+import { LoginPage } from '../pages/LoginPage';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('user can log in with valid credentials', async ({ page }) => {
+  const loginPage = new LoginPage(page);
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
-});
+  await loginPage.goto();
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+  console.log('URL after goto:', await page.url());
+  console.log('TITLE after goto:', await page.title());
+  console.log('Email count:', await page.locator('#Email').count());
+  console.log('Password count:', await page.locator('#Password').count());
+  console.log('Login button count:', await page.getByRole('button', { name: 'Log in' }).count());
+  console.log('Body text start:', (await page.locator('body').innerText()).slice(0, 500));
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  await page.screenshot({ path: 'test-results/login-diagnostic.png', fullPage: true });
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  await loginPage.loginAs('admin@yourstore.com', 'admin123');
+
+  await expect(page.getByRole('link', { name: 'Log out' })).toBeVisible();
 });
