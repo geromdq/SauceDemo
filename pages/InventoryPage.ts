@@ -7,7 +7,7 @@ export class InventoryPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.productsHeading = page.getByRole('heading', { name: 'Products' });
+    this.productsHeading = page.getByText('Products', { exact: true });
     this.inventoryItems = page.locator('.inventory_item');
   }
 

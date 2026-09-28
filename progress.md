@@ -1,82 +1,31 @@
 # Project Progress
 
-## Project
+## Current Status
 
-Playwright + TypeScript UI automation project for SauceDemo.
+The SauceDemo Playwright project is in the early framework implementation stage.
 
-The project is also being used to learn:
-- Playwright
-- TypeScript
-- Page Object Model
-- Git / GitHub
-- AI-assisted development
-- AI agent harnesses
+The login, inventory, add to cart, remove from cart, and checkout flows are implemented and passing across all configured browsers.
 
-## Completed
+## Recent Progress
 
-- Playwright project initialized
-- TypeScript configured
-- Playwright configuration created
-- POM structure created
-- AGENTS.md created
-- init.sh created
-- progress.md created
-- Migrated project from nopCommerce to SauceDemo
-- Updated project configuration and documentation for SauceDemo
-- Created minimal LoginPage page object
-- Created login test
-- Validated successful SauceDemo login flow
-- Login test passes successfully
-- Created minimal InventoryPage page object
+- Migrated the project from nopCommerce to SauceDemo.
+- Implemented and validated the login flow.
+- Added LoginPage, InventoryPage, CartPage, and CheckoutPage.
+- Implemented and validated adding products to the shopping cart (`tests/add-to-cart.spec.ts`).
+- Implemented and validated removing products from the shopping cart (`tests/remove-from-cart.spec.ts`).
+- Implemented and validated checkout flow (`tests/checkout.spec.ts`).
+- Extended `CartPage` with `checkoutButton` and `proceedToCheckout()`.
+- Created `CheckoutPage` with inputs, buttons, and checkout actions.
+- Verified all 12 tests passing across Chromium, Firefox, and WebKit.
+- Updated `feature_list.json` marking checkout as passed.
 
-## Current State
+## Issues / Findings
 
-The basic SauceDemo login flow is working.
+- nopCommerce was abandoned because Cloudflare protection made automated execution unreliable.
+- SauceDemo provides a stable environment for Playwright practice.
+- Playwright's `getByRole('button', { name: 'Remove' })` locator cleanly targets the cart item remove button.
+- All 5 planned features in `feature_list.json` are now passing.
 
-The project currently contains:
-- `pages/LoginPage.ts`
-- `pages/InventoryPage.ts`
-- `tests/login.spec.ts`
-- `AGENTS.md`
-- `progress.md`
-- `init.sh`
-- `tsconfig.json`
-- `playwright.config.ts`
+## Next Session
 
-## Harness
-
-Current harness components:
-
-- `AGENTS.md` — project instructions for AI agents
-- `progress.md` — persistent project context
-- `init.sh` — project initialization script
-
-Planned harness improvements:
-- Define leader, implementer, and reviewer agent roles
-- Improve progress tracking between agents
-- Experiment with agent handoffs
-- Make agents read previous progress before starting work
-- Make agents update progress after meaningful tasks
-
-## Important Decisions
-
-- nopCommerce was abandoned because Cloudflare bot protection caused unreliable automated test execution.
-- SauceDemo was selected as the new practice application.
-- The project should remain simple and focused on learning.
-- Avoid unnecessary abstractions and speculative functionality.
-- Prefer stable, user-facing Playwright locators.
-
-## Known Issues
-
-- No known application-level issues with the current login test.
-- The project harness is still in an early experimental stage.
-- Leader / implementer / reviewer agents have not yet been implemented.
-
-## Next Steps
-
-1. Commit the current stable SauceDemo migration.
-2. Improve the AI agent harness.
-3. Establish a reliable `AGENTS.md` → `progress.md` workflow.
-4. Experiment with leader, implementer, and reviewer agents.
-5. Add a minimal product/inventory interaction test using the new InventoryPage object.
-6. Continue expanding the SauceDemo automation framework.
+- Review completed features or define additional test scenarios in `feature_list.json` (e.g. negative login scenarios, empty cart checkout validations, sorting).

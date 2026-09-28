@@ -43,8 +43,9 @@ For every meaningful task:
 5. Briefly explain the approach for non-trivial tasks.
 6. Implement the change.
 7. Validate the result.
-8. Update `progress.md`.
-9. Summarize what changed and what was verified.
+8. Update `feature_list.json` when a tracked feature is successfully verified.
+9. Update `progress.md` with meaningful results, findings, or blockers from the task.
+10. Summarize what changed and what was verified.
 
 Do not invent functionality or locators based only on assumptions. If something cannot be verified, say so.
 
