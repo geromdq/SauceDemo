@@ -27,6 +27,7 @@ The project is also being used to learn:
 - Created login test
 - Validated successful SauceDemo login flow
 - Login test passes successfully
+- Created minimal InventoryPage page object
 
 ## Current State
 
@@ -34,6 +35,7 @@ The basic SauceDemo login flow is working.
 
 The project currently contains:
 - `pages/LoginPage.ts`
+- `pages/InventoryPage.ts`
 - `tests/login.spec.ts`
 - `AGENTS.md`
 - `progress.md`
@@ -76,4 +78,5 @@ Planned harness improvements:
 2. Improve the AI agent harness.
 3. Establish a reliable `AGENTS.md` → `progress.md` workflow.
 4. Experiment with leader, implementer, and reviewer agents.
-5. Continue expanding the SauceDemo automation framework.
+5. Add a minimal product/inventory interaction test using the new InventoryPage object.
+6. Continue expanding the SauceDemo automation framework.

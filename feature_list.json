@@ -1,0 +1,62 @@
+[
+  {
+    "category": "functional",
+    "description": "User can log in with valid SauceDemo credentials",
+    "steps": [
+      "Navigate to the SauceDemo login page",
+      "Enter a valid username",
+      "Enter a valid password",
+      "Click the Login button",
+      "Verify the inventory page is displayed"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "User can view the product inventory",
+    "steps": [
+      "Log in with valid credentials",
+      "Verify the Products heading is displayed",
+      "Verify products are displayed in the inventory"
+    ],
+    "passes": true
+  },
+  {
+    "category": "functional",
+    "description": "User can add a product to the shopping cart",
+    "steps": [
+      "Log in with valid credentials",
+      "Select a product from the inventory",
+      "Add the product to the shopping cart",
+      "Open the shopping cart",
+      "Verify the selected product is displayed"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "User can remove a product from the shopping cart",
+    "steps": [
+      "Log in with valid credentials",
+      "Add a product to the shopping cart",
+      "Open the shopping cart",
+      "Remove the product",
+      "Verify the product is no longer displayed"
+    ],
+    "passes": false
+  },
+  {
+    "category": "functional",
+    "description": "User can complete a checkout",
+    "steps": [
+      "Log in with valid credentials",
+      "Add a product to the shopping cart",
+      "Open the shopping cart",
+      "Proceed to checkout",
+      "Enter valid checkout information",
+      "Complete the checkout",
+      "Verify the order confirmation is displayed"
+    ],
+    "passes": false
+  }
+]
